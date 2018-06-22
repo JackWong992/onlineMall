@@ -4,12 +4,12 @@
     <div class="search-bar">
       <van-row >
         <van-col span="3">
-          <img :src="locationIcon" width="62%" class="location-icon">
+          <img :src="locationIcon" width="60%" class="location-icon">
         </van-col>
         <van-col span="16">
-          <input type="text" class="search-input">
+           <input type="text" class="search-input"> 
         </van-col>
-        <van-col span="5" class="search-button-r">
+        <van-col span="5" >
           <van-button size="mini" class="search-button">查找</van-button>
         </van-col>      
       </van-row>
@@ -81,7 +81,7 @@
   import floorComponent from '../component/floorComponent'
   import {toMoney} from '@/filter/moneyFilter.js'
   import goodsInfo from '../component/goodsInfoComponent'  
-  // import url from '@/serviceAPI.config.js'
+  import url from '@/serviceAPI.config.js'
   export default {
     data() {
       return {
@@ -111,7 +111,7 @@
     components: { swiper,swiperSlide,floorComponent , goodsInfo},
     created(){
         axios({
-            url: 'https://www.easy-mock.com/mock/5b063126d14ea45a9a89551b/onlinemall/index',
+            url: url.getshopingMallInfo,
             method: 'get',
         })
         .then(response => {
@@ -142,33 +142,33 @@
     background-color: #e5017d;
     line-height: 2.2rem;
     overflow: hidden;
+    padding-bottom: .4rem;
   }
   .location-icon {
-    padding-top: .4rem;
-    padding-left: .5rem; 
+    padding-top: .6rem;
+    padding-left: .7rem; 
   }
   .search-input {
-    width: 100%;
     height: 1.3rem;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 1px solid #fff !important;
-    color: #000;
-    border-radius: .3rem;
-    text-indent: .3rem;
-    font-size: 14px;
+    width: 98%;
+    line-height: 1.3rem;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #e5017d;
+    border-left: 1px solid #e5017d;
+    background-color: #e5017d;
+    color: #fff;
+    font-size: 16px;
+
   }
+ 
   .search-button {
-    position: absolute;
-    left: .2rem;
-    top: .47rem;
-    height: 1.5rem;
-    line-height: 1.5rem;
+    height: 1.32rem;
+    line-height: 1.32rem;
+    margin-top: .8rem;
+    margin-right: 1.6rem;
   }
-  .search-button-r {
-    position: relative;
-  }
+
   .swiper-area {
     clear: both;
     height: 8.4rem;
